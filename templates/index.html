@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delish Diner 🍔</title>
+    <link rel="icon" href="https://emojiapi.dev/api/v1/hamburger/64.png" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Delish Diner</h1>
+        <p class="subtitle">A Taste You'll Remember 🍽️</p>
+    </header>
+
+    <main class="container">
+        <h2>Today's Menu</h2>
+        <table class="menu-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.item_name }}</td>
+                    <td>{{ item.item_price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Delish Diner • Made with ❤️ using Flask</p>
+    </footer>
+</body>
+</html>
